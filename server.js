@@ -16,7 +16,7 @@ if (port == null || port == "") {
     port = 3000
 }
 
-let connectionString = 'mongodb+srv://toDoAppUser:ssasaa@cluster0.sgayk.mongodb.net/toDoApp?retryWrites=true&w=majority'
+let connectionString = 'xyz'
 
 mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client) {
     db = client.db()
@@ -28,7 +28,7 @@ app.use(passwordProtected)
 function passwordProtected(req, res, next) {
     res.set('WWW-Authenticate', 'Basic realm="TODO APP"')
     // console.log(req.headers.authorization)
-    if (req.headers.authorization == "Basic c2hhaGFiYWF6OnNoYQ==") {
+    if (req.headers.authorization == "abc") {
         next()
     }
     else {
